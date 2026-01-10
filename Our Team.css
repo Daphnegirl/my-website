@@ -1,0 +1,150 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Roboto', sans-serif;
+  color:#526b80;
+}
+
+body{
+  min-height:100vh;
+  width:100%;
+  background-color:#e4e4e4;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+/* TEAM CARD */
+.card{
+  position:relative;
+  width:300px;
+  background-color:#fff;
+  border-radius:12px;
+  box-shadow:0 8px 15px rgba(0, 0, 0, 0.15);
+  padding:20px 16px 24px;
+  margin:56px 24px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  transition:transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 15px 25px rgba(0,0,0,0.2);
+}
+
+/* IMAGE */
+.card-image{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  overflow:hidden;
+  position:absolute;
+  top:0;
+  left:50%;
+  transform:translate(-50%, -50%);
+  box-shadow:
+    0 15px 35px -15px rgba(0, 0, 0, 0.5),
+    0 5px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.card-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transform:scale(1.1);
+}
+
+/* TEXT */
+.name{
+  margin-top:90px;
+  font-size:1.4em;
+  color:#333;
+  font-weight:bold;
+  letter-spacing:0.8px;
+  margin-bottom:6px;
+}
+
+.role{
+  font-size:0.95em;
+  color:#777;
+  margin-bottom:12px;
+}
+
+p{
+  line-height:24px;
+  letter-spacing:0.4px;
+  margin-bottom:14px;
+  text-align:center;
+}
+
+/* SOCIALS */
+.socials{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.socials button{
+  margin:12px 8px;
+  width:44px;
+  height:44px;
+  border:none;
+  border-radius:50%;
+  cursor:pointer;
+  transition:transform 0.3s, opacity 0.3s;
+}
+
+.socials button:hover{
+  opacity:0.85;
+  transform:scale(1.1);
+}
+
+.socials button i{
+  color:#fff;
+  font-size:1.3em;
+}
+
+/* COLORS */
+button.github{ background-color:#24292e; }
+button.twitter{ background-color:#1da1f2; }
+button.instagram{ background-color:#c02e96; }
+
+/* RESPONSIVE */
+@media (max-width:600px){
+  body{
+    flex-direction:column;
+  }
+
+  .card{
+    width:85%;
+    margin:70px 0;
+  }
+}
+
+/* OPTIONAL DARK MODE SUPPORT */
+.dark-mode{
+  background:#121212;
+}
+
+.dark-mode .card{
+  background:#1f1f1f;
+}
+
+.dark-mode p,
+.dark-mode .name,
+.dark-mode .role{
+  color:#f1f1f1;
+}
+
+
+
+
+
+
+
+
