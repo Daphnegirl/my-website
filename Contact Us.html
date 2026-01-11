@@ -1,174 +1,238 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            color: #526b80;
-        }
-        .banner {
-            position: relative;
-            width: 90%;
-            margin: 20px auto;
-        }
-        .banner img {
-            width: 100%;
-            display: block;
-        }
-        .banner .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-        .banner .overlay h2 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            text-shadow: 5px 5px 10px #000000;
-        }
-        .banner .overlay p {
-            font-size: 1rem;
-            margin: 5px 0;
-            text-shadow: 2px 2px 5px #000000;
-        }
-        .form-container {
-            background: transparent; /* Fully transparent background */
-            padding: 20px;
-            border-radius: 10px;
-            width: 100%;
-            max-width: 400px;
-            margin: 20px 0;
-            color: white; /* Text color white for readability */
-            text-shadow: 2px 2px 5px #000000; /* Text shadow for better contrast */
-        }
-        .form-container h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .form-container .input-box {
-            margin-bottom: 10px;
-        }
-        .form-container .input-box label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        .form-container .input-box input[type="text"],
-        .form-container .input-box input[type="email"],
-        .form-container .input-box input[type="checkbox"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background: rgba(255, 255, 255, 0.7); /* Slightly transparent background for inputs */
-            color: #526b80;
-        }
-        .form-container .input-box input[type="submit"] {
-            background-color: #526b80;
-            color: white;
-            border: none;
-            padding: 10px;
-            width: 100%;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-        .form-container .input-box input[type="submit"]:hover {
-            background-color: #415a70;
-        }
-        a:link, a:visited {
-            color: #526b80;
-        }
-    </style>
-</head>
-<body>
-    <center>
-        <p><strong><font size="8">Contact Us</font></strong></p>
-    </center>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us</title>
 
-    <div class="banner">
-        <img src="images/Pictures/Dark Office 2.jpeg" alt="Dark Office 2">
-        <div class="overlay">
-            <h2>Get in touch here</h2>
-            <p>8, Wayne Street,</p>
-            <p>Welham Green, Reading, RG11 3AQ</p>
-            <p>Use this form to email us if you have any questions or if you want to apply to work with us.</p>
-            <p>Alternatively, you can telephone us at 07769923851</p>
-            <p>Here are our opening times:</p>
-            <p>Monday: 9AM to 6PM</p>
-            <p>Tuesday: 9AM to 6PM</p>
-            <p>Wednesday: 9AM to 6PM</p>
-            <p>Thursday: 9AM to 6PM</p>
-            <p>Friday: 10AM to 5PM</p>
-            <p>Saturday: 11AM to 4PM</p>
-            <p>Sunday: Closed</p>
-            <div class="form-container">
-                <h2>Details</h2>
-                <form id="contactForm" action="">
-                    <div class="input-box">
-                        <label for="inputName">Name</label>
-                        <input type="text" id="inputName" placeholder="Enter Name..." required oninput="validateName()">
-                        <span id="error-message" style="color: red;"></span>
-                    </div>
-                    <div class="input-box">
-                        <label for="inputEmail">Email</label>
-                        <input type="email" id="inputEmail" placeholder="Enter Email..." required>
-                    </div>
-                    <div class="input-box">
-                        <label for="inputMessage">Message</label>
-                        <input type="text" id="inputMessage" placeholder="Enter Message...">
-                    </div>
-                    <div class="input-box">
-                        <input type="checkbox" id="inputCheckbox">
-                        <label for="inputCheckbox">Subscribe to newsletter</label>
-                    </div>
-                    <div class="input-box">
-                        <input type="submit" value="Submit">
-                    </div>
-                </form>
-            </div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #526b80;
+}
+
+/* Banner */
+.banner {
+    position: relative;
+    width: 90%;
+    margin: 20px auto;
+}
+
+.banner img {
+    width: 100%;
+    display: block;
+}
+
+.banner .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.banner .overlay h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 5px 5px 10px #000000;
+}
+
+.banner .overlay p {
+    font-size: 1rem;
+    margin: 5px 0;
+    text-shadow: 2px 2px 5px #000000;
+}
+
+/* Form */
+.form-container {
+    background: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px 0;
+    color: white;
+    text-shadow: 2px 2px 5px #000000;
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-box {
+    margin-bottom: 10px;
+}
+
+.input-box label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-box input[type="text"],
+.input-box input[type="email"],
+.input-box input[type="checkbox"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: rgba(255,255,255,0.7);
+    color: #526b80;
+}
+
+.input-box input[type="submit"] {
+    background-color: #526b80;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.input-box input[type="submit"]:hover {
+    background-color: #415a70;
+}
+
+/* Subtle navigation arrows */
+.nav-button {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(82,107,128,0.2);
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.6rem;
+    color: #526b80;
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.nav-button:hover {
+    background: rgba(82,107,128,0.4);
+    color: #3a5068;
+}
+
+.back-button {
+    left: 10px;
+}
+
+.forward-button {
+    right: 10px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .banner .overlay h2 {
+        font-size: 2rem;
+    }
+
+    .nav-button {
+        font-size: 1.3rem;
+        padding: 8px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<center>
+    <p><strong><font size="8">Contact Us</font></strong></p>
+</center>
+
+<div class="banner">
+    <img src="images/Dark Office 2.jpeg" alt="Dark Office 2">
+    <div class="overlay">
+        <h2>Get in touch here</h2>
+        <p>8, Wayne Street, Welham Green, Reading, RG11 3AQ</p>
+        <p>Use this form to email us if you have any questions or want to apply.</p>
+        <p>Telephone: 07769923851</p>
+
+        <p><strong>Opening Times</strong></p>
+        <p>Mon–Thu: 9AM – 6PM | Fri: 10AM – 5PM</p>
+        <p>Sat: 11AM – 4PM | Sun: Closed</p>
+
+        <div class="form-container">
+            <h2>Details</h2>
+            <form id="contactForm">
+
+                <div class="input-box">
+                    <label>Name</label>
+                    <input type="text" id="inputName" placeholder="Enter Name..." required oninput="validateName()">
+                    <span id="error-message" style="color:red;"></span>
+                </div>
+
+                <div class="input-box">
+                    <label>Email</label>
+                    <input type="email" placeholder="Enter Email..." required>
+                </div>
+
+                <div class="input-box">
+                    <label>Message</label>
+                    <input type="text" placeholder="Enter Message...">
+                </div>
+
+                <div class="input-box">
+                    <input type="checkbox"> Subscribe to newsletter
+                </div>
+
+                <div class="input-box">
+                    <input type="submit" value="Submit">
+                </div>
+
+            </form>
         </div>
     </div>
+</div>
 
-    <script>
-        function validateName() {
-            const nameInput = document.getElementById('inputName');
-            const errorMessage = document.getElementById('error-message');
-            const regex = /^[a-zA-Z\s]*$/;  // Modified regex to allow spaces
-            if (!regex.test(nameInput.value)) {
-                errorMessage.textContent = "Only alphabets and spaces are allowed.";
-                nameInput.value = nameInput.value.replace(/[^a-zA-Z\s]/g, '');
-            } else {
-                errorMessage.textContent = "";
-            }
-        }
+<!-- Subtle Back & Forward Buttons -->
+<button class="nav-button back-button" onclick="window.location.href='About Us.html'">
+    <i class="fas fa-chevron-left"></i>
+</button>
 
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            const nameInput = document.getElementById('inputName').value;
-            if (!/^[a-zA-Z\s]+$/.test(nameInput)) {
-                event.preventDefault();
-                alert('Name can only contain alphabets and spaces.');
-            }
-        });
-    </script>
+<button class="nav-button forward-button" onclick="window.location.href='Job Alerts.html'">
+    <i class="fas fa-chevron-right"></i>
+</button>
+
+<script>
+function validateName() {
+    const input = document.getElementById("inputName");
+    const error = document.getElementById("error-message");
+    const regex = /^[a-zA-Z\s]*$/;
+
+    if (!regex.test(input.value)) {
+        error.textContent = "Only letters and spaces allowed.";
+        input.value = input.value.replace(/[^a-zA-Z\s]/g, '');
+    } else {
+        error.textContent = "";
+    }
+}
+</script>
+
 </body>
 </html>
+
 
 
 
