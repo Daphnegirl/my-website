@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -20,6 +20,14 @@ body {
     color: #526b80;
 }
 
+/* Page title */
+.page-title {
+    text-align: center;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    margin: 20px 0;
+    font-weight: bold;
+}
+
 /* Banner */
 .banner {
     position: relative;
@@ -30,34 +38,34 @@ body {
 .banner img {
     width: 100%;
     display: block;
+    border-radius: 10px;
 }
 
 .banner .overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 25px;
+    overflow-y: auto;
 }
 
 .banner .overlay h2 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    text-shadow: 5px 5px 10px #000000;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    margin-bottom: 15px;
+    text-shadow: 3px 3px 8px #000;
 }
 
 .banner .overlay p {
-    font-size: 1rem;
-    margin: 5px 0;
-    text-shadow: 2px 2px 5px #000000;
+    font-size: clamp(0.9rem, 2.5vw, 1.05rem);
+    margin: 6px 0;
+    line-height: 1.5;
+    text-shadow: 2px 2px 5px #000;
 }
 
 /* Form */
@@ -66,34 +74,33 @@ body {
     padding: 20px;
     border-radius: 10px;
     width: 100%;
-    max-width: 400px;
-    margin: 20px 0;
+    max-width: 420px;
+    margin-top: 20px;
     color: white;
-    text-shadow: 2px 2px 5px #000000;
+    text-shadow: 2px 2px 5px #000;
 }
 
 .form-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .input-box {
     margin-bottom: 10px;
+    text-align: left;
 }
 
 .input-box label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
 }
 
 .input-box input[type="text"],
-.input-box input[type="email"],
-.input-box input[type="checkbox"] {
+.input-box input[type="email"] {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: none;
     border-radius: 5px;
-    background: rgba(255,255,255,0.7);
+    background: rgba(255,255,255,0.85);
     color: #526b80;
 }
 
@@ -112,14 +119,14 @@ body {
     background-color: #415a70;
 }
 
-/* Subtle navigation arrows */
+/* Navigation buttons */
 .nav-button {
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
     background: rgba(82,107,128,0.2);
     border: none;
-    padding: 10px;
+    padding: 12px;
     border-radius: 50%;
     cursor: pointer;
     font-size: 1.6rem;
@@ -133,23 +140,36 @@ body {
     color: #3a5068;
 }
 
-.back-button {
-    left: 10px;
+.back-button { left: 10px; }
+.forward-button { right: 10px; }
+
+/* Mobile fixes */
+@media (max-width: 768px) {
+
+    .banner {
+        width: 95%;
+    }
+
+    .banner .overlay {
+        justify-content: flex-start;
+        padding: 20px 15px;
+    }
+
+    .form-container {
+        margin-top: 15px;
+        padding: 15px;
+    }
 }
 
-.forward-button {
-    right: 10px;
-}
+@media (max-width: 480px) {
 
-/* Mobile */
-@media (max-width: 600px) {
-    .banner .overlay h2 {
-        font-size: 2rem;
+    .banner .overlay {
+        padding: 15px 12px;
     }
 
     .nav-button {
-        font-size: 1.3rem;
-        padding: 8px;
+        font-size: 1.2rem;
+        padding: 9px;
     }
 }
 </style>
@@ -157,14 +177,14 @@ body {
 
 <body>
 
-<center>
-    <p><strong><font size="8">Contact Us</font></strong></p>
-</center>
+<div class="page-title">Contact Us</div>
 
 <div class="banner">
-    <img src="images/Dark Office 2.jpeg" alt="Dark Office 2">
+    <img src="images/Dark Office 2.jpeg" alt="Office">
     <div class="overlay">
+
         <h2>Get in touch here</h2>
+
         <p>8, Wayne Street, Welham Green, Reading, RG11 3AQ</p>
         <p>Use this form to email us if you have any questions or want to apply.</p>
         <p>Telephone: 07769923851</p>
@@ -175,7 +195,8 @@ body {
 
         <div class="form-container">
             <h2>Details</h2>
-            <form id="contactForm">
+
+            <form>
 
                 <div class="input-box">
                     <label>Name</label>
@@ -206,7 +227,7 @@ body {
     </div>
 </div>
 
-<!-- Subtle Back & Forward Buttons -->
+<!-- Navigation -->
 <button class="nav-button back-button" onclick="window.location.href='About Us.html'">
     <i class="fas fa-chevron-left"></i>
 </button>
@@ -232,9 +253,3 @@ function validateName() {
 
 </body>
 </html>
-
-
-
-
-
-
