@@ -1,125 +1,171 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            color: #526b80;
-            margin: 0;
-            padding: 0;
-        }
-        center {
-            margin-top: 20px;
-        }
-        center p, center strong, center font {
-            display: block;
-            margin-bottom: 10px;
-        }
-        .wrapper {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .features-grid-container {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
-        .features-grid-row {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .features-grid-row-img,
-        .features-grid-row-text {
-            flex: 1;
-            padding: 20px;
-        }
-        .features-grid-row-img img {
-            width: 100%;
-            height: auto;
-            max-height: 300px; /* Limit the height of the images */
-            object-fit: cover; /* Make sure the images cover the area */
-        }
-        @media (min-width: 768px) {
-            .features-grid-container {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #526b80;
+    margin: 0;
+    padding: 0;
+}
+
+center {
+    margin-top: 20px;
+}
+
+.wrapper {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.features-grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.features-grid-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.features-grid-row-img,
+.features-grid-row-text {
+    flex: 1;
+    padding: 20px;
+}
+
+.features-grid-row-img img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+@media (min-width: 768px) {
+    .features-grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Subtle navigation arrows */
+.nav-button {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(82,107,128,0.2);
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.6rem;
+    color: #526b80;
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.nav-button:hover {
+    background: rgba(82,107,128,0.4);
+    color: #3a5068;
+}
+
+.back-button {
+    left: 10px;
+}
+
+.forward-button {
+    right: 10px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .nav-button {
+        font-size: 1.3rem;
+        padding: 8px;
+    }
+}
+</style>
 </head>
+
 <body>
 
 <center>
     <strong><font size="7">About Us</font></strong>
     <br><strong><font size="5">We are Hot Beans</font></strong></br>
-    <br><font size="5">We are a developing tech company and our aim is to create exceptional websites and apps that will enhance user experience. Our passion for innovation and excellence fuels everything we do</font></br>
+    <br><font size="5">
+        We are a developing tech company and our aim is to create exceptional websites and apps that will enhance user experience. 
+        Our passion for innovation and excellence fuels everything we do.
+    </font></br>
 </center>
 
-<div class="wrapper bg-light-white" id="features-grid">
+<div class="wrapper" id="features-grid">
     <div class="features-grid-container">
-        <!-- First Row (image -> text) -->
+
         <div class="features-grid-row">
-            <!-- First Half for Image -->
             <div class="features-grid-row-img">
                 <img src="images/About Us 1.jpeg" alt="About Us 1">
             </div>
-            <!-- Second Half for Text -->
             <div class="features-grid-row-text">
                 <h2>Our Story</h2>
-                <p>Hot Beans was founded in the year 2017 by our CEO Olusola Martin. Hot Beans builds and develops apps and websites. With the great increase of jobs in this sector, we need more web developers who are willing to grow and join us in becoming one of the best tech companies in England.</p>
+                <p>Hot Beans was founded in 2017 by our CEO Olusola Martin. Hot Beans builds and develops apps and websites. With the great increase of jobs in this sector, we need more web developers who are willing to grow and join us.</p>
             </div>
         </div>
 
-        <!-- Second Row (text -> image) -->
         <div class="features-grid-row">
-            <!-- First Half for Text -->
             <div class="features-grid-row-text">
                 <h2>Join Us</h2>
-                <p>If you look forward to being part of the next big projects or becoming part of a motivated team, feel free to join our community today and take the next big step in your web development journey.</p>
+                <p>If you look forward to being part of the next big projects or becoming part of a motivated team, feel free to join our community today.</p>
             </div>
-            <!-- Second Half for Image -->
             <div class="features-grid-row-img">
-                <img src="images/About Us 2.jpeg" alt="About Us 2">
+                <img src="C:/Users/SONDIRO/OneDrive/Pictures/About Us 2.jpeg" alt="About Us 2">
             </div>
         </div>
 
-        <!-- Third Row (image -> text) -->
         <div class="features-grid-row">
-            <!-- First Half for Image -->
             <div class="features-grid-row-img">
                 <img src="images/About Us 3.jpeg" alt="About Us 3">
             </div>
-            <!-- Second Half for Text -->
             <div class="features-grid-row-text">
                 <h2>Goals</h2>
                 <p>We wish to continue to grow and open new branches in other countries.</p>
             </div>
         </div>
 
-        <!-- Fourth Row (text -> image) -->
         <div class="features-grid-row">
-            <!-- First Half for Text -->
             <div class="features-grid-row-text">
                 <h2>Our Mission</h2>
                 <p>Our mission is to continuously innovate and provide top-notch solutions that improve user experiences and exceed client expectations.</p>
             </div>
-            <!-- Second Half for Image -->
             <div class="features-grid-row-img">
                 <img src="images/About Us 4.jpeg" alt="About Us 4">
             </div>
         </div>
+
     </div>
 </div>
+
+<!-- Subtle Back & Forward Buttons -->
+<button class="nav-button back-button" onclick="window.location.href='Courses.html'">
+    <i class="fas fa-chevron-left"></i>
+</button>
+
+<button class="nav-button forward-button" onclick="window.location.href='Contact Us.html'">
+    <i class="fas fa-chevron-right"></i>
+</button>
 
 </body>
 </html>
 
 
-
  
+
 
 
